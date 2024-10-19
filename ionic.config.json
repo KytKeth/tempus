@@ -1,0 +1,7 @@
+{
+  "name": "tempus",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
