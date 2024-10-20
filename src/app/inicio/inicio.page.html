@@ -3,10 +3,16 @@
 
 <ion-content [fullscreen]="true">
 <br>
-<h1>Tempus</h1>
+<h2>Tempus</h2>
 <br>
-  
-  <ion-card>
+
+ <div id="image-container">
+  <img routerLink="/register" src="../../assets/img/weather-news.png" alt="quatro climas" width="100px" height="100px">
+ </div>
+
+ <br>
+
+  <ion-card color="primary">
     <ion-card-header>
       <ion-card-title>Temperatura Atual</ion-card-title>
     </ion-card-header>
@@ -25,7 +31,7 @@
 </div>
 <br>
 <div class="botao">
-  <ion-button routerLink="/login" shape="round" color="primary">Sair</ion-button>
+  <ion-button routerLink="/home" shape="round" color="primary">Sair</ion-button>
 </div>
 
 </ion-content>
