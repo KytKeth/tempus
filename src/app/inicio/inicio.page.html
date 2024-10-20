@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Temperatura Atual</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div *ngIf="weather">
+        <p>Temperatura: {{ weather.main.temp }}°C</p>
+        <p>Descrição: {{ weather.weather[0].description }}</p>
+      </div>
+      <div *ngIf="!weather">Carregando...</div>
+    </ion-card-content>
+  </ion-card>
+
+<ion-button (click)="getWeather()">Atualizar Clima</ion-button>
+</ion-content>
