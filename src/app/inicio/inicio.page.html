@@ -1,10 +1,12 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>inicio</ion-title>
-  </ion-toolbar>
+
 </ion-header>
 
 <ion-content [fullscreen]="true">
+
+<h1>Tempus</h1>
+
+<br>
   
   <ion-card>
     <ion-card-header>
@@ -19,5 +21,8 @@
     </ion-card-content>
   </ion-card>
 
-<ion-button (click)="getWeather()">Atualizar Clima</ion-button>
+<br>
+<div class="botao">
+  <ion-button shape="round" color="primary" (click)="getWeather()">Atualizar Clima</ion-button>
+</div>
 </ion-content>

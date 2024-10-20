@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+*{
+  font-family: "Quicksand", sans-serif;
+}
+
+ion-content{
+    --ion-background-color: #3b97d3;
+}
+
+ion-card{
+    text-align: center;
+}
+
+ion-button{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    --color: #3b97d3;
+}
+
+.botao{
+    text-align: center;
+}

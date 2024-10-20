@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import axios from 'axios';
 
+import { addIcons } from 'ionicons';
+
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.page.html',

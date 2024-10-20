@@ -32,6 +32,19 @@
   text-decoration: none;
 }
 
+
 ion-content{
-  --background-color: #5ccfdb;
+  --ion-background-color: #3b97d3;
+}
+
+#image-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;   
+}
+
+img{
+  max-width: 100%;          /* Ajusta o tamanho da imagem conforme necessário */
+  height: auto;
 }
