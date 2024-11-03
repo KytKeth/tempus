@@ -6,11 +6,20 @@ export const environment = {
   production: false
 };
 
-/*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
- */
-// import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyAWTBeYoGJxyR1OUteggQ21Kpf_ST8Fszo",
+  authDomain: "tempus-2ed99.firebaseapp.com",
+  projectId: "tempus-2ed99",
+  storageBucket: "tempus-2ed99.firebasestorage.app",
+  messagingSenderId: "636245500593",
+  appId: "1:636245500593:web:ebf1b315ab9f7c202db890"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
