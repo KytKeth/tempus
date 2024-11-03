@@ -18,6 +18,8 @@ export class RegisterPage {
     const userData = { username: this.username, email: this.email, password: this.password };
     await this.storage.set(this.username, userData);
 
+    console.log('Usuário registrado com sucesso:', userData);
+
     this.navCtrl.navigateForward('/login');
   }
 

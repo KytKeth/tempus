@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-login',
@@ -7,14 +8,17 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage {
-  username: string | undefined;
+  username!: string;
   password!: string;
 
-  constructor(private navCtrl: NavController) {}
+  constructor(private navCtrl: NavController, private storage: Storage) {}
 
-  login() {
-    if (this.username === 'user' && this.password === 'password') {
-      this.navCtrl.navigateForward('/home');
+  async login() {
+    const storedUser = await this.storage.get(this.username);
+
+    if (storedUser && storedUser.password === this.password) {
+      console.log('Login bem-sucedido');
+      this.navCtrl.navigateForward('/inicio');
     } else {
       alert('Credenciais inválidas');
     }
