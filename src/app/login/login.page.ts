@@ -13,19 +13,14 @@ export class LoginPage {
 
   constructor(private navCtrl: NavController, private storage: Storage) {}
 
-  async ngOnInit() {
-    await this.storage.create(); 
-  }
-  
   async login() {
     const storedUser = await this.storage.get(this.username);
-    console.log('storedUser:', storedUser);
 
     if (storedUser && storedUser.password === this.password) {
       console.log('Login bem-sucedido');
+      
       this.navCtrl.navigateForward('/inicio');
     } else {
-      console.log('Credenciais inválidas');
       alert('Credenciais inválidas');
     }
   }

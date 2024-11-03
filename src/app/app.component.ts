@@ -7,11 +7,11 @@ import { Storage } from '@ionic/storage-angular';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor(private storage: Storage) {
-    this.initStorage();
+    constructor(private storage: Storage) {
+      this.initStorage();
+    }
+  
+    async initStorage() {
+      await this.storage.create();
+    }
   }
-
-  async initStorage() {
-    await this.storage.create();
-  }
-}
