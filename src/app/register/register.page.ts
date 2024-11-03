@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-register',
@@ -11,18 +12,17 @@ export class RegisterPage {
   email: string = '';
   password: string = '';
 
-  constructor(private navCtrl: NavController) {}
+  constructor(private navCtrl: NavController, private storage: Storage) {}
 
-  register() {
-    // Simular o registro do usuário
-    console.log('Usuário registrado com sucesso:', this.username, this.email);
+  async register() {
+    const userData = { username: this.username, email: this.email, password: this.password };
+    await this.storage.set(this.username, userData);
 
-    // Redireciona para a tela de login após o registro
     this.navCtrl.navigateForward('/login');
   }
 
   goToLogin() {
-    // Navega de volta para a tela de login
+  
     this.navCtrl.navigateForward('/login');
   }
 }

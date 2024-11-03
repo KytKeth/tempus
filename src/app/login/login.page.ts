@@ -13,7 +13,6 @@ export class LoginPage {
   constructor(private navCtrl: NavController) {}
 
   login() {
-    // Lógica de autenticação (apenas um exemplo)
     if (this.username === 'user' && this.password === 'password') {
       this.navCtrl.navigateForward('/home');
     } else {
