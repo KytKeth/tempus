@@ -18,7 +18,6 @@ export class LoginPage {
 
     if (storedUser && storedUser.password === this.password) {
       console.log('Login bem-sucedido');
-      
       this.navCtrl.navigateForward('/inicio');
     } else {
       alert('Credenciais inválidas');
