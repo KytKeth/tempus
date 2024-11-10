@@ -15,7 +15,7 @@ export class InicioPage implements OnInit {
       const apiKey = '7147181076deb61e524bf3b4b734f616';
       const city = 'Rio de Janeiro';
       try {
-        const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`);
+        const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=pt_br`);
         this.weather = response.data;
       } catch (error) {
         console.error('Erro ao obter os dados:', error);
