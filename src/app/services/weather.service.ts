@@ -6,6 +6,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class WeatherService {
+  fetchWeatherData(): any {
+    throw new Error('Method not implemented.');
+  }
   private apiUrl = 'https://api.openweathermap.org/data/2.5/weather';
   private apiKey = '7147181076deb61e524bf3b4b734f616';
 

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController } from '@ionic/angular';
-import { Storage } from '@ionic/storage-angular';
+import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -8,24 +8,36 @@ import { Storage } from '@ionic/storage-angular';
   styleUrls: ['./register.page.scss'],
 })
 export class RegisterPage {
-  username: string = '';
   email: string = '';
   password: string = '';
+  username: string = '';
 
-  constructor(private navCtrl: NavController, private storage: Storage) {}
+  constructor(private authService: AuthService, private router: Router) {}
+
+  isValidEmail(email: string): boolean {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
 
   async register() {
-    const userData = { username: this.username, email: this.email, password: this.password };
-    await this.storage.set(this.username, userData);
+    if (!this.isValidEmail(this.email)) {
+      alert("Por favor, insira um e-mail válido.");
+      return;
+    }
 
-    console.log('Usuário registrado com sucesso:', userData);
-
-    this.navCtrl.navigateForward('/login');
+    try {
+      await this.authService.register(this.email, this.password);
+      this.router.navigateByUrl('/inicio');
+    } catch (error) {
+      console.error('Erro de registro:', error);
+      alert('Erro de registro: ' + error);
+    }
   }
 
   goToLogin() {
-  
-    this.navCtrl.navigateForward('/login');
+    this.router.navigateByUrl('/login');
   }
 }
+
+
 
