@@ -6,6 +6,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class WeatherService {
+  getWeatherData() {
+    throw new Error('Method not implemented.');
+  }
   fetchWeatherData(): any {
     throw new Error('Method not implemented.');
   }
