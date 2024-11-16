@@ -6,31 +6,30 @@
   <h1>Registro</h1>
   <br>
 
-  <form (ngSubmit)="register()">
-    
-    <ion-item color="primary">
-      <ion-label position="floating">Usuário</ion-label>
-      <ion-input type="text" [(ngModel)]="username" name="username" required placeholder="Username"></ion-input>
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked">Email</ion-label>
+      <ion-input
+        type="email"
+        [(ngModel)]="email"
+        placeholder="Digite seu email"
+      ></ion-input>
     </ion-item>
-    
-    <br>
-    
-    <ion-item color="primary">
-      <ion-label position="floating">Email</ion-label>
-      <ion-input type="email" [(ngModel)]="email" name="email" required placeholder="Email"></ion-input>
+
+    <ion-item>
+      <ion-label position="stacked">Senha</ion-label>
+      <ion-input
+        type="password"
+        [(ngModel)]="password"
+        placeholder="Digite sua senha"
+      ></ion-input>
     </ion-item>
-    
-    <br>
-    
-    <ion-item color="primary">
-      <ion-label position="floating">Senha</ion-label>
-      <ion-input type="password" [(ngModel)]="password" name="password" required placeholder="Senha"></ion-input>
-    </ion-item>
+  </ion-list>
     
     <br>
 
     <div class="botao">
-      <ion-button shape="round" type="submit">Registrar</ion-button>
+      <ion-button shape="round" (click)="register()">Registrar</ion-button>
     </div>
 
     <br>
@@ -40,5 +39,4 @@
     </div>
 
     <br>
-  </form>
 </ion-content>

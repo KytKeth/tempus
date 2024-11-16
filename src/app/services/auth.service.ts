@@ -27,9 +27,10 @@ export class AuthService {
     return this.afAuth.authState;
   }
 
-  isAuthenticated(): Observable<boolean> {
-    return this.afAuth.authState.pipe(map((user) => !!user));
+  isAuthenticated() {
+    return this.afAuth.authState;
   }
+  
 }
 
 
