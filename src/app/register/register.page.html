@@ -5,31 +5,13 @@
   <br>
   <h1>Registro</h1>
   <br>
-
-  <ion-list>
-    <ion-item>
-      <ion-label position="stacked">Email</ion-label>
-      <ion-input
-        type="email"
-        [(ngModel)]="email"
-        placeholder="Digite seu email"
-      ></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label position="stacked">Senha</ion-label>
-      <ion-input
-        type="password"
-        [(ngModel)]="password"
-        placeholder="Digite sua senha"
-      ></ion-input>
-    </ion-item>
-  </ion-list>
-    
+  <form (ngSubmit)="onRegister()">
+  <ion-input type="email" [(ngModel)]="email" name="email" required placeholder="Email"></ion-input>
+  <br>
+  <ion-input type="password" [(ngModel)]="password" name="password" required placeholder="Senha"></ion-input>
     <br>
-
     <div class="botao">
-      <ion-button shape="round" (click)="register()">Registrar</ion-button>
+      <ion-button shape="round" type="submit">Registrar</ion-button>
     </div>
 
     <br>
@@ -37,6 +19,6 @@
     <div class="botao">
       <ion-button shape="round" color="primary" (click)="goToLogin()">Já tem uma conta? Entrar</ion-button>
     </div>
-
+  </form>
     <br>
 </ion-content>
