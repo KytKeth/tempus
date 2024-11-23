@@ -8,14 +8,24 @@
   <form (ngSubmit)="onLogin()">
   <ion-input type="email" [(ngModel)]="email" name="email" required placeholder="Email"></ion-input>
 <ion-input type="password" [(ngModel)]="password" name="password" required placeholder="Senha"></ion-input>
+
 <br>
 
 <div class="botao">
   <ion-button shape="round" color="primary" type="submit">Entrar</ion-button>
 </div>
 </form>
+
+<br>
+
 <div class="botao">
   <ion-button shape="round" color="primary" (click)="goToRegister()">Não tem uma conta? Registrar-se</ion-button>
+</div>
+
+<br>
+
+<div class="botao">
+  <ion-button routerLink="/home" shape="round" color="primary">Sair</ion-button>
 </div>
 
 </ion-content>

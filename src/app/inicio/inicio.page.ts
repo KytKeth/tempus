@@ -20,7 +20,6 @@ export class InicioPage {
       const position = await Geolocation.getCurrentPosition();
       const { latitude, longitude } = position.coords;
 
-      // Buscar dados do clima
       this.weatherService.getWeatherData(latitude, longitude).subscribe(
         (data) => {
           this.weatherData = data;
