@@ -1,66 +1,45 @@
-// import { Component, OnInit } from '@angular/core';
-// import { WeatherService } from '../services/weather.service';
+import { Component } from '@angular/core';
+import { Geolocation } from '@capacitor/geolocation';
+import { WeatherService } from '../services/weather.service'; 
 
-// @Component({
-//   selector: 'app-inicio',
-//   templateUrl: './inicio.page.html',
-//   styleUrls: ['./inicio.page.scss'],
-// })
-// export class InicioPage implements OnInit {
+@Component({
+  selector: 'app-inicio',
+  templateUrl: './inicio.page.html',
+  styleUrls: ['./inicio.page.scss'],
+})
+export class InicioPage {
+  weatherData: any = null; 
+  isLoading: boolean = false; 
 
-//   weather: any; 
+  constructor(private weatherService: WeatherService) {}
 
-//   constructor(private weatherService: WeatherService) {}
+  async getWeather() {
+    this.isLoading = true; 
+    try {
+      
+      const position = await Geolocation.getCurrentPosition();
+      const { latitude, longitude } = position.coords;
 
-//   ngOnInit() {
-//     this.getWeather(); 
-//   }
-
-//   getWeather() {
-//     this.weatherService.getWeatherData().subscribe(
-//       (data) => {
-//         this.weather = data;
-//       },
-//       (error) => {
-//         console.error('Erro ao obter dados do clima:', error);
-//       }
-//     );
-//   }
-// }
-
-
-
-
-
-
-
- import { Component, OnInit } from '@angular/core';
- import { WeatherService } from '../services/weather.service';
-
- @Component({
-   selector: 'app-inicio',
-   templateUrl: './inicio.page.html',
-   styleUrls: ['./inicio.page.scss'],
- })
-export class InicioPage implements OnInit {
-   weather: any;
-
-   constructor(private weatherService: WeatherService) {}
-
-   ngOnInit() {
-    this.getWeather();
-   }
-
-   getWeather() {
-     const city = 'Rio de Janeiro';
-     this.weatherService.getWeather(city).subscribe(
-       (data) => {
-        this.weather = data;
-      },
-       (error) => {
-         console.error('Erro ao obter dados de clima', error);
-       }
-     );
-   }
+      // Buscar dados do clima
+      this.weatherService.getWeatherData(latitude, longitude).subscribe(
+        (data) => {
+          this.weatherData = data;
+          this.isLoading = false; 
+        },
+        (error) => {
+          console.error('Erro ao buscar dados do clima:', error);
+          this.isLoading = false; 
+        }
+      );
+    } catch (error) {
+      console.error('Erro ao obter localização:', error);
+      this.isLoading = false;
+    }
+  }
 }
+
+
+
+
+
 

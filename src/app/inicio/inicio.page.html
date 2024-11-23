@@ -12,22 +12,37 @@
 
  <br>
 
-  <ion-card color="primary">
-    <ion-card-header>
-      <ion-card-title>Temperatura Atual</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <div *ngIf="weather">
-        <p>Temperatura: {{ weather.main.temp }}°C</p>
-        <p>Descrição: {{ weather.weather[0].description}}</p>
-      </div>
-      <div *ngIf="!weather">Carregando...</div>
-    </ion-card-content>
-  </ion-card>
+  <!-- Carregando -->
+  <div *ngIf="isLoading">
+    <ion-spinner></ion-spinner>
+  </div>
+
+  <!-- Dados do clima -->
+  <div *ngIf="weatherData">
+    <h2>{{ weatherData.city.name }}</h2>
+    <p>Temperatura Atual: {{ weatherData.list[0].main.temp }}°C</p>
+    <p>Descrição: {{ weatherData.list[0].weather[0].description }}</p>
+
+    <h3>Previsão:</h3>
+    <ul>
+      <li *ngFor="let forecast of weatherData.list">
+        {{ forecast.dt_txt }} - {{ forecast.main.temp }}°C - {{ forecast.weather[0].description }}
+      </li>
+    </ul>
+  </div>
+
+<ng-template #loading>
+  <ion-spinner name="crescent"></ion-spinner>
+  <p>Carregando localização e clima...</p>
+</ng-template>
 
 <br>
 <div class="botao">
   <ion-button shape="round" color="primary" (click)="getWeather()">Atualizar Clima</ion-button>
+</div>
+<br>
+<div class="botao">
+  <ion-button shape="round" color="primary" routerLink="/search-location">Pesquisar o Clima de Lugares</ion-button>
 </div>
 <br>
 <div class="botao">

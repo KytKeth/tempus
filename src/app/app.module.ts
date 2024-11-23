@@ -13,11 +13,14 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
 import { environment } from '../environments/environment';
 
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { WeatherService } from './services/weather.service';
+
 
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, AppRoutingModule, IonicModule.forRoot(), AngularFireModule.initializeApp(environment.firebaseConfig), AngularFireAuthModule,HttpClientModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [Geolocation, WeatherService,{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

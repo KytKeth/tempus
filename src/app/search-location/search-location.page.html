@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>search-location</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+  <ion-content>
+    <!-- Campo de busca -->
+    <ion-input [(ngModel)]="city" placeholder="Digite o nome da cidade"></ion-input>
+    <ion-button shape="round" color="primary" (click)="searchWeather()">Buscar Clima</ion-button>
+  
+    <!-- Dados do clima -->
+    <div *ngIf="weatherData">
+      <h2>{{ weatherData.city.name }}</h2>
+      <p>Temperatura Atual: {{ weatherData.list[0].main.temp }}°C</p>
+      <p>Descrição: {{ weatherData.list[0].weather[0].description }}</p>
+    </div>
+
+<br>
+
+  <div class="botao">
+    <ion-button shape="round" color="primary" routerLink="/inicio">Clima onde eu Estou</ion-button>
+  </div>
+
+<br>
+
+  <div class="botao">
+    <ion-button routerLink="/home" shape="round" color="primary">Sair</ion-button>
+  </div>
+
+  </ion-content>
+  
+
