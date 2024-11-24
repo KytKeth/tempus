@@ -5,51 +5,29 @@
 }
 
 .login-content{
+  position: relative;
   --background: none;
+}
+
+.background{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-image: url(https://cdn.discordapp.com/attachments/1041053372133945355/1310032340201767043/beautiful-clouds-scenery.jpg?ex=6743be31&is=67426cb1&hm=6db07076725b074d4f0c688ebb358b7cc55c5279a81f638d0470a4c888a663eb&);
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-  height: 100%;
+  filter: blur(3px);
+  z-index: 1;
 }
 
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
-}
-
-
-// ion-content{
-//   --ion-background-color: #3b97d3;
-// }
-
-#image-container{
+.login-container{
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 2;
   height: 90vh;   
 }
 
