@@ -4,9 +4,11 @@
   font-family: "Quicksand", sans-serif;
 }
 
-// ion-header{
-//     --ion-background-color: #3b97d3;
-// }
+#image-container{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
 
 
 .login-content{
