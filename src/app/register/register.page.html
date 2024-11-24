@@ -1,15 +1,21 @@
-<ion-header>
-</ion-header>
-
-<ion-content>
+<ion-content class="login-content">
   <br>
   <h1>Registro</h1>
   <br>
+
+  <div class="login-container">
+
   <form (ngSubmit)="onRegister()">
-  <ion-input type="email" [(ngModel)]="email" name="email" required placeholder="Email"></ion-input>
+    <ion-item lines="none" class="input-group">
+      <ion-icon name="mail" class="icon"></ion-icon>
+      <ion-input type="email" [(ngModel)]="email" name="email" required placeholder="Email"></ion-input>
+    </ion-item>
   <br>
-  <ion-input type="password" [(ngModel)]="password" name="password" required placeholder="Senha"></ion-input>
-    <br>
+  <ion-item lines="none" class="input-group">
+    <ion-icon name="lock-closed" class="icon"></ion-icon>
+    <ion-input type="password" [(ngModel)]="password" name="password" required placeholder="Senha"></ion-input>
+  </ion-item>
+  <br>
     <div class="botao">
       <ion-button shape="round" type="submit">Registrar</ion-button>
     </div>
@@ -17,8 +23,12 @@
     <br>
 
     <div class="botao">
-      <ion-button shape="round" color="primary" (click)="goToLogin()">Já tem uma conta? Entrar</ion-button>
+      <ion-button shape="round" (click)="goToLogin()">Já tem uma conta? Entrar</ion-button>
     </div>
   </form>
+</div>
     <br>
+    <div class="botao">
+      <ion-button routerLink="/home" shape="round">Sair</ion-button>
+    </div>
 </ion-content>

@@ -1,7 +1,5 @@
-<ion-header [translucent]="true">
-</ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content class="login-content" [fullscreen]="true">
 <br>
 <h2>Tempus</h2>
 <br>
@@ -12,12 +10,12 @@
 
  <br>
 
-  <!-- Carregando -->
+ <div class="login-container">
+
   <div *ngIf="isLoading">
     <ion-spinner></ion-spinner>
   </div>
 
-  <!-- Dados do clima -->
   <div *ngIf="weatherData">
     <h2>{{ weatherData.city.name }}</h2>
     <p>Temperatura Atual: {{ weatherData.list[0].main.temp }}°C</p>
@@ -37,15 +35,17 @@
 </ng-template>
 <br>
 <div class="botao">
-  <ion-button shape="round" color="primary" (click)="getWeather()">Atualizar Clima</ion-button>
+  <ion-button shape="round" (click)="getWeather()">Atualizar Clima</ion-button>
 </div>
 <br>
 <div class="botao">
-  <ion-button shape="round" color="primary" routerLink="/search-location">Pesquisar o Clima de Lugares</ion-button>
+  <ion-button shape="round" routerLink="/search-location">Pesquisar o Clima de Lugares</ion-button>
 </div>
 <br>
 <div class="botao">
-  <ion-button routerLink="/home" shape="round" color="primary">Sair</ion-button>
+  <ion-button routerLink="/home" shape="round">Sair</ion-button>
+</div>
+
 </div>
 
 </ion-content>

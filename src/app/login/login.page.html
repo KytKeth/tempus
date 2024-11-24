@@ -1,31 +1,44 @@
-<ion-header>
-</ion-header>
+<ion-content class="login-content">
 
-<ion-content>
-  <br>
-  <h1>Login</h1>
-  <br>
-  <form (ngSubmit)="onLogin()">
-  <ion-input type="email" [(ngModel)]="email" name="email" required placeholder="Email"></ion-input>
-<ion-input type="password" [(ngModel)]="password" name="password" required placeholder="Senha"></ion-input>
+<br>
+   <h1>Login</h1>
+<br>
 
 <br>
 
+<div class="login-container">
+
+  <form (ngSubmit)="onLogin()">
+<br>
+  <ion-item lines="none" class="input-group">
+    <ion-icon name="mail" class="icon"></ion-icon>
+    <ion-input class="email" type="email" [(ngModel)]="email" name="email" required placeholder="Email"></ion-input>
+  </ion-item>
+<br>
+  <ion-item lines="none" class="input-group">
+    <ion-icon name="lock-closed" class="icon"></ion-icon>
+    <ion-input type="password" [(ngModel)]="password" name="password" required placeholder="Senha"></ion-input>
+  </ion-item>
+<br>
+
 <div class="botao">
-  <ion-button shape="round" color="primary" type="submit">Entrar</ion-button>
+  <ion-button shape="round" type="submit" class="button">Entrar</ion-button>
 </div>
+
 </form>
 
-<br>
-
-<div class="botao">
-  <ion-button shape="round" color="primary" (click)="goToRegister()">Não tem uma conta? Registrar-se</ion-button>
 </div>
 
 <br>
 
 <div class="botao">
-  <ion-button routerLink="/home" shape="round" color="primary">Sair</ion-button>
+  <ion-button shape="round" (click)="goToRegister()">Não tem uma conta? Registrar-se</ion-button>
+</div>
+
+<br>
+
+<div class="botao">
+  <ion-button routerLink="/home" shape="round">Sair</ion-button>
 </div>
 
 </ion-content>

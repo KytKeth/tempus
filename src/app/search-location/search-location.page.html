@@ -1,33 +1,40 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>search-location</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content class="login-content">
+  <br>
+  <h2>Pesquise o Tempo</h2>
+  <br>
+  <p>Pesquise o tempo em qualquer lugar.😊</p>
+  <br>
 
-  <ion-content>
-    <!-- Campo de busca -->
-    <ion-input [(ngModel)]="city" placeholder="Digite o nome da cidade"></ion-input>
-    <ion-button shape="round" color="primary" (click)="searchWeather()">Buscar Clima</ion-button>
-  
-    <!-- Dados do clima -->
+  <div class="login-container">
+    <ion-item lines="none" class="input-group">
+      <ion-icon class="icon" name="search"></ion-icon>
+      <ion-input [(ngModel)]="city" placeholder="Digite o nome da cidade"></ion-input>
+    </ion-item>
+
+    <div class="botao">
+      <ion-button shape="round" (click)="searchWeather()">Buscar Clima</ion-button>
+    </div>
+
+<br>
+
     <div *ngIf="weatherData">
       <h2>{{ weatherData.city.name }}</h2>
       <p>Temperatura Atual: {{ weatherData.list[0].main.temp }}°C</p>
       <p>Descrição: {{ weatherData.list[0].weather[0].description }}</p>
     </div>
-
+  </div>
 <br>
 
   <div class="botao">
-    <ion-button shape="round" color="primary" routerLink="/inicio">Clima onde eu Estou</ion-button>
+    <ion-button shape="round" routerLink="/inicio">Clima onde eu Estou</ion-button>
   </div>
 
 <br>
 
   <div class="botao">
-    <ion-button routerLink="/home" shape="round" color="primary">Sair</ion-button>
+    <ion-button routerLink="/home" shape="round">Sair</ion-button>
   </div>
 
-  </ion-content>
+</ion-content>
   
 

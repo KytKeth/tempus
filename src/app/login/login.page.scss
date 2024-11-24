@@ -4,13 +4,18 @@
   font-family: "Quicksand", sans-serif;
 }
 
-ion-header{
-    --ion-background-color: #3b97d3;
-}
+// ion-header{
+//     --ion-background-color: #3b97d3;
+// }
 
-ion-content{
-    --ion-background-color: #3b97d3;
-    text-align: center;
+
+.login-content{
+    --background: none;
+    background-image: url(https://cdn.discordapp.com/attachments/1041053372133945355/1310032340201767043/beautiful-clouds-scenery.jpg?ex=6743be31&is=67426cb1&hm=6db07076725b074d4f0c688ebb358b7cc55c5279a81f638d0470a4c888a663eb&);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
 }
 
 ion-card{
@@ -30,6 +35,52 @@ h1{
     font-weight: bold;
 }
 
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+// .icon-sol{
+//     font-size: 42px;
+//     color: #dbec22;
+// }
+
+// .texto{
+//     text-align: center;
+//     font-size: 22px;
+// }
+
+.login-container{
+    padding: 22px;
+    border-radius: 15px;
+    background-color: #cae2f7;
+    box-shadow: 0 4px 10px rgba(60, 60, 60, 0.6);
+}
+
+.input-group{
+    margin-bottom: 20px;
+    --background: transparent;
+    border-radius: 25px;
+    border: 2px solid #3b97d3;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.input-group ion-input{
+    color: #3b97d3;
+    padding-left: 10px;
+}
+
+.input-group .icon{
+    color: #3b97d3; 
+}
+
 .botao{
     text-align: center;
+}
+
+.botao .button{
+    font-weight: bold;
 }
