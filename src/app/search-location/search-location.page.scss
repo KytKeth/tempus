@@ -36,8 +36,14 @@ p{
     padding-left: 10px;
     font-size: 18px;
     font-weight: bold;
-    color: #09304a;
+    color: #2c2f3f;
 }
+
+.error {
+    color: red;
+    text-align: center;
+    margin: 10px 0;
+  }
 
 .container{
     display: flex;
@@ -78,4 +84,17 @@ p{
 
 .botao .button{
     font-weight: bold;
+}
+
+.weather-container {
+    text-align: center;
+    color: #fff;
+    background: #2c2f3f;
+    padding: 20px 20px;
+    border-radius: 10px;
+
+    p{
+        color: white;
+    }
+
 }

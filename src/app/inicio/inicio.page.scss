@@ -78,11 +78,66 @@ h2{
     font-weight: bold;
 }
 
+.weather-container {
+    text-align: center;
+    color: #fff;
+    background: #2c2f3f;
+    padding: 20px 20px;
+    border-radius: 10px;
+
+    p{
+        font-weight: bold;
+        gap: 10px;
+        font-size: 18px;
+    }
+
+}
+
+.current-weather {
+    font-size: 1.2em;
+    margin-bottom: 20px;
 
 
+ img {
+    width: 50px;
+    height: 50px;
+ }
 
+ p {
+    margin: 5px 0;
+  }
+}
 
+.forecast {
+    display: flex;
+    justify-content: space-around;
+  
+    .forecast-day {
+     text-align: center;
+  
+        p {
+        margin: 5px 0;
+        }
+  
+        img {
+        width: 40px;
+        height: 40px;
+        }
+    }
+}
 
+li {
+    font-size: 1.2rem;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    margin: 0.5rem 0;
+  }
 
 
 

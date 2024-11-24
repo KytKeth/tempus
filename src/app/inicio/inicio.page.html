@@ -12,30 +12,26 @@
 
  <div class="login-container">
 
-  <div *ngIf="isLoading">
-    <ion-spinner></ion-spinner>
-  </div>
+  <div class="weather-container" *ngIf="weatherData">
+    <h1>{{ currentLocation }}</h1>
+    <h3>Clima Atual</h3>
+    <p>Temperatura: {{ forecast[1]?.temp }}°C</p>
+    <p>Descrição: {{ forecast[1]?.description }}</p>
 
-  <div *ngIf="weatherData">
-    <h2>{{ weatherData.city.name }}</h2>
-    <p>Temperatura Atual: {{ weatherData.list[0].main.temp }}°C</p>
-    <p>Descrição: {{ weatherData.list[0].weather[0].description }}</p>
-
-    <h3>Previsão:</h3>
+    <h1>Previsão</h1>
+    <div class="forecast">
     <ul>
-      <li *ngFor="let forecast of weatherData.list">
-        {{ forecast.dt_txt }} - {{ forecast.main.temp }}°C - {{ forecast.weather[0].description }}
+      <li *ngFor="let day of forecast" class="forecast-day">
+        <img *ngIf="day.icon" [src]="'http://openweathermap.org/img/wn/' + day.icon + '.png'" alt="Icone do Clima" />
+        <p>{{ day.date | date: 'EEEE, dd/MM' }} <br> {{ day.temp }}°C - {{ day.description }}</p>
       </li>
     </ul>
   </div>
-
-<ng-template #loading>
-  <ion-spinner name="crescent"></ion-spinner>
-  <p>Carregando localização e clima...</p>
-</ng-template>
+  </div>
+  
 <br>
 <div class="botao">
-  <ion-button shape="round" (click)="getWeather()">Atualizar Clima</ion-button>
+  <ion-button shape="round" (click)="loadWeather()">Atualizar Clima</ion-button>
 </div>
 <br>
 <div class="botao">
